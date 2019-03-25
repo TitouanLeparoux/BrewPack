@@ -38,13 +38,26 @@ public class ListActivity extends AppCompatActivity {
         // of the RecyclerView
     }
 
-    public void showList(List<Brew> input){
+    public void showList(final List<Brew> input){
         recyclerView.setHasFixedSize(true);
         // use a linear layout manager
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
         // define an adapter
         mAdapter = new MyAdapter(input);
+
+        recyclerView.addOnItemTouchListener(new RecyclerTouchListener(getApplicationContext(), recyclerView, new RecyclerTouchListener.ClickListener() {
+            @Override
+            public void onClick(View view, int position) {
+                Brew brew = input.get(position);
+            }
+
+            @Override
+            public void onLongClick(View view, int position) {
+
+            }
+        }));
+
         recyclerView.setAdapter(mAdapter);
     }
 }

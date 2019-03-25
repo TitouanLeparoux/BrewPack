@@ -8,9 +8,9 @@ public class Brew {
     private String state;
     private String postal_code;
     private String country;
-    private double longitude;
-    private double latitude;
-    private int phone;
+    private String longitude;
+    private String latitude;
+    private String phone;
     private String website_url;
     private String updated_at;
 
@@ -22,9 +22,9 @@ public class Brew {
     public String getState()            { return state; }
     public String getPostal_code()      { return postal_code; }
     public String getCountry()          { return country; }
-    public double getLongitude()        { return longitude; }
-    public double getLatitude()         { return latitude; }
-    public int getPhone()               { return phone; }
+    public String getLongitude()        { return longitude; }
+    public String getLatitude()         { return latitude; }
+    public String getPhone()               { return phone; }
     public String getWebsite_url()      { return website_url; }
     public String getUpdated_at()       { return updated_at; }
 }
