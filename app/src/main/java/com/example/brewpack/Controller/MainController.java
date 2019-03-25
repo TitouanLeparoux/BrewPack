@@ -30,7 +30,7 @@ public class MainController {
                 .create();
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://raw.githubusercontent.com/Metasilveur/MobileFireEmblem/master/")
+                .baseUrl("https://raw.githubusercontent.com/TitouanLeparoux/BrewPack/master/API/")
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
 
