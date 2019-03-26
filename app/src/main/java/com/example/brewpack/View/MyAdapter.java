@@ -11,7 +11,6 @@ import android.widget.TextView;
 import com.example.brewpack.Model.Brew;
 import com.example.brewpack.R;
 
-import java.security.PrivateKey;
 import java.util.List;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.CelluleJava> {
@@ -30,7 +29,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.CelluleJava> {
         // each data item is just a string in this case
         public TextView txtHeader;
         public TextView txtFooter;
-        public ImageView image;
+        public ImageView icon;
         public View layout;
 
         //Constructeur
@@ -39,7 +38,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.CelluleJava> {
             layout = v;
             txtHeader = (TextView) v.findViewById(R.id.firstLine);
             txtFooter = (TextView) v.findViewById(R.id.secondLine);
-            image = v.findViewById(R.id.icon);
+            icon = v.findViewById(R.id.icon);
         }
     }
 
