@@ -47,19 +47,7 @@ public class ListActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
         // define an adapter
         mAdapter = new MyAdapter(input, getListener(), this);
-
-        /*
-        recyclerView.addOnItemTouchListener(new RecyclerTouchListener(getApplicationContext(), recyclerView, new RecyclerTouchListener.ClickListener() {
-            @Override
-            public void onClick(View view, int position) {
-                Brew brew = input.get(position);
-            }
-
-            @Override
-            public void onLongClick(View view, int position) {
-
-            }
-        })); */
+        
         recyclerView.setAdapter(mAdapter);
     }
 
