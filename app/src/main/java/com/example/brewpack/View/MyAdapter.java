@@ -69,6 +69,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.CelluleJava> {
         // - replace the contents of the view with that element
         final Brew brew = listValues.get(position);
         final String name = listValues.get(position).getName();
+        final String city = listValues.get(position).getCity();
+        final String country = listValues.get(position).getCountry();
+        // HEADER
         holder.txtHeader.setText(name);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,8 +79,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.CelluleJava> {
                 listener.onItemClick(brew);
             }
         });
-
-        holder.txtFooter.setText("Footer: " + name);
+        // FOOTER
+        holder.txtFooter.setText(city + ", " + country);
     }
 
     // Return the size of your dataset (invoked by the layout manager)

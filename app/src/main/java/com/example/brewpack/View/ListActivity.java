@@ -47,7 +47,7 @@ public class ListActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
         // define an adapter
         mAdapter = new MyAdapter(input, getListener(), this);
-        
+
         recyclerView.setAdapter(mAdapter);
     }
 
