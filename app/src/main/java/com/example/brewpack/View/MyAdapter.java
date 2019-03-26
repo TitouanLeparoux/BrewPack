@@ -1,5 +1,6 @@
 package com.example.brewpack.View;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +15,12 @@ import java.util.List;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.CelluleJava> {
     private List<Brew> listValues;
+    private final OnItemClickListener listener;
+    private Context context;
+
+    public interface OnItemClickListener {
+        void onItemClick(Brew brew);
+    }
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
@@ -35,19 +42,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.CelluleJava> {
         }
     }
 
-    public void add(int position, Brew item) {
-        listValues.add(position, item);
-        notifyItemInserted(position);
-    }
-
-    public void remove(int position) {
-        listValues.remove(position);
-        notifyItemRemoved(position);
-    }
-
     // Provide a suitable constructor (depends on the kind of dataset)
-    public MyAdapter(List<Brew> listValues) {
+    public MyAdapter(List<Brew> listValues, onItemClickListener listener, Context context) {
         this.listValues = listValues;
+        this.listener = listener;
+        this.context = context;
     }
 
     // Create new views (invoked by the layout manager)
@@ -70,10 +69,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.CelluleJava> {
         Brew currentPokemon = listValues.get(position);
         final String name = currentPokemon.getName();
         holder.txtHeader.setText(name);
-        holder.txtHeader.setOnClickListener(new View.OnClickListener() {
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                remove(position);
+                listener.onItemClick(brew);
             }
         });
 

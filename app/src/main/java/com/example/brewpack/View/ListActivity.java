@@ -1,5 +1,6 @@
 package com.example.brewpack.View;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -12,6 +13,7 @@ import android.view.View;
 import com.example.brewpack.Controller.MainController;
 import com.example.brewpack.Model.Brew;
 import com.example.brewpack.R;
+import com.google.gson.Gson;
 
 import java.util.List;
 
@@ -46,6 +48,7 @@ public class ListActivity extends AppCompatActivity {
         // define an adapter
         mAdapter = new MyAdapter(input);
 
+        /*
         recyclerView.addOnItemTouchListener(new RecyclerTouchListener(getApplicationContext(), recyclerView, new RecyclerTouchListener.ClickListener() {
             @Override
             public void onClick(View view, int position) {
@@ -56,8 +59,22 @@ public class ListActivity extends AppCompatActivity {
             public void onLongClick(View view, int position) {
 
             }
-        }));
-
+        })); */
         recyclerView.setAdapter(mAdapter);
+    }
+
+    private MyAdapter.OnItemClickListener getListener() {
+        return new MyAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(Brew brew) {
+                Intent intent = new Intent(getApplicationContext(), ContentActivity.class);
+                Gson gson = new Gson();
+                String json = gson.toJson(brew);
+                intent.putExtra(NAME, json);
+                startActivity(intent);
+
+                // Transition 
+            }
+        }
     }
 }
