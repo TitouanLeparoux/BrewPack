@@ -2,6 +2,8 @@ package com.example.brewpack.View;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Html;
+import android.text.method.LinkMovementMethod;
 import android.widget.TextView;
 
 import com.example.brewpack.Model.Brew;
@@ -36,5 +38,14 @@ public class ContentActivity extends AppCompatActivity {
         // WEBSITE URL
         TextView url = findViewById(R.id.urlBrew);
         url.setText("WebSite : " + brew.getWebsite_url());
+
+        // POSITION with maps
+        TextView position = findViewById(R.id.positionBrew);
+        position.setClickable(true);
+        position.setMovementMethod(LinkMovementMethod.getInstance());
+        String text = "https://www.google.com/maps?q=" +
+                brew.getLatitude() + "," +
+                brew.getLongitude() ;
+        position.setText("Position : " + text);
     }
 }
