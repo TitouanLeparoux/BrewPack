@@ -2,17 +2,17 @@
 
 ## Présentation
 Ce projet est une **application Android** faisant appel à une **API** afin de collecter les données. 
-Cette application présente une liste de Brasserie Américaine de bière.
+Cette application présente une liste de Brasseries Américaine de bière.
 
 ## Prérequis
 - Avoir Android Studio
-- GitFlow sur GitHub
+- Utilisation de GitHub
 
 ## Consignes respectées
 - 2 écrans : Un écran avec une liste et une page descriptive de l'élément selectionné
-- Appel à une API web : https://www.openbrewerydb.org/ J'ai convertis cette API en fichier .json hébergé sur GitHub : https://github.com/TitouanLeparoux/BrewPack/blob/master/API/breweries.json
+- Appel à une API web : https://www.openbrewerydb.org/ J'ai convertis cette API en fichier `.json` hébergé sur GitHub : https://github.com/TitouanLeparoux/BrewPack/blob/master/API/breweries.json
 - **Fonctionnalités BONUS**
-  - Icone de l'application <img src="https://github.com/TitouanLeparoux/BrewPack/blob/master/app/src/main/res/drawable/logo_brewdog.png" width="15" /> 
+  - Icone de l'application <img src="https://github.com/TitouanLeparoux/BrewPack/blob/master/app/src/main/res/mipmap-hdpi/ic_launcher_brewdog.png" width="20" /> 
   - Architecture de fichier MVC
   - Image de la liste <img src="https://github.com/TitouanLeparoux/BrewPack/blob/master/app/src/main/res/drawable/icon_beer.png" width="15" />
 
