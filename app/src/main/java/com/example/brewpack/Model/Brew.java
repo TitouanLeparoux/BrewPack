@@ -24,7 +24,7 @@ public class Brew {
     public String getCountry()          { return country; }
     public String getLongitude()        { return longitude; }
     public String getLatitude()         { return latitude; }
-    public String getPhone()               { return phone; }
+    public String getPhone()            { return phone; }
     public String getWebsite_url()      { return website_url; }
     public String getUpdated_at()       { return updated_at; }
 }

@@ -46,7 +46,7 @@ public class ListActivity extends AppCompatActivity {
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
         // define an adapter
-        mAdapter = new MyAdapter(input);
+        mAdapter = new MyAdapter(input, getListener(), this);
 
         /*
         recyclerView.addOnItemTouchListener(new RecyclerTouchListener(getApplicationContext(), recyclerView, new RecyclerTouchListener.ClickListener() {
@@ -70,11 +70,11 @@ public class ListActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), ContentActivity.class);
                 Gson gson = new Gson();
                 String json = gson.toJson(brew);
-                intent.putExtra(NAME, json);
+                intent.putExtra("showTextView", json);
                 startActivity(intent);
 
-                // Transition 
+                // Transition
             }
-        }
+        };
     }
 }

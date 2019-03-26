@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.example.brewpack.Model.Brew;
 import com.example.brewpack.R;
 
+import java.security.PrivateKey;
 import java.util.List;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.CelluleJava> {
@@ -43,7 +44,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.CelluleJava> {
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public MyAdapter(List<Brew> listValues, onItemClickListener listener, Context context) {
+    public MyAdapter(List<Brew> listValues, OnItemClickListener listener, Context context) {
         this.listValues = listValues;
         this.listener = listener;
         this.context = context;
@@ -66,8 +67,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.CelluleJava> {
     public void onBindViewHolder(CelluleJava holder, final int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
-        Brew currentPokemon = listValues.get(position);
-        final String name = currentPokemon.getName();
+        final Brew brew = listValues.get(position);
+        final String name = listValues.get(position).getName();
         holder.txtHeader.setText(name);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
