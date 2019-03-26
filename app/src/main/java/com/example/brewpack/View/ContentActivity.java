@@ -21,7 +21,20 @@ public class ContentActivity extends AppCompatActivity {
         Gson gson = new Gson();
         Brew brew = gson.fromJson(json, Brew.class);
 
+        // NAME
         TextView name = findViewById(R.id.nameBrew);
         name.setText(brew.getName());
+
+        // TYPE
+        TextView type = findViewById(R.id.typeBrew);
+        type.setText("Type : " + brew.getBrewery_type());
+
+        // PLACE
+        TextView city = findViewById(R.id.cityBrew);
+        city.setText("Place : " + brew.getCity()+ ", " + brew.getCountry());
+
+        // WEBSITE URL
+        TextView url = findViewById(R.id.urlBrew);
+        url.setText("WebSite : " + brew.getWebsite_url());
     }
 }
